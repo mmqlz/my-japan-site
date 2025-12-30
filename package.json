@@ -1,0 +1,24 @@
+{
+  "name": "my-japan-site",
+  "version": "1.0.0",
+  "description": "ふくき株式会社 - FUKUKI Co., Ltd.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx http-server",
+    "build": "echo 'Static site - no build needed'",
+    "preview": "npx http-server dist"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.8"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "vercel",
+    "speed-insights",
+    "performance",
+    "monitoring"
+  ],
+  "author": "FUKUKI Co., Ltd.",
+  "license": "MIT"
+}
