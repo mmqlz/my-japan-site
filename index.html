@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社誠実 | SEIJITSU Co., Ltd.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --jp-black: #1a1a1a; }
+        body { font-family: 'Noto Sans JP', sans-serif; scroll-behavior: smooth; }
+        .tracking-ultra { letter-spacing: 0.5em; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-white text-[--jp-black] overflow-x-hidden">
+
+    <header class="fixed w-full z-50 mix-blend-difference">
+        <div class="max-w-7xl mx-auto px-8 py-10 flex justify-between items-center text-white">
+            <div class="text-2xl font-light tracking-tighter">SEIJITSU</div>
+            <nav class="hidden md:flex space-x-12 text-[10px] tracking-widest font-medium">
+                <a href="#services" class="hover:opacity-50 transition">SERVICES</a>
+                <a href="#about" class="hover:opacity-50 transition">ABOUT</a>
+                <a href="#news" class="hover:opacity-50 transition">NEWS</a>
+                <a href="#contact" class="hover:opacity-50 transition border border-white px-4 py-2">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden bg-gray-50">
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gray-100 rounded-full blur-3xl opacity-50"></div>
+        </div>
+        <div class="relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-light leading-tight tracking-[0.2em] mb-6">
+                誠実な技術で、<br><span class="text-gray-400">日常を彩る。</span>
+            </h1>
+            <p class="text-xs tracking-ultra text-gray-500 uppercase">Integrity in technology, coloring daily life.</p>
+        </div>
+    </section>
+
+    <section id="services" class="py-40 px-8 max-w-7xl mx-auto">
+        <h2 class="text-sm tracking-ultra text-gray-300 mb-20 text-center uppercase">Our Expertise</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+            <div class="fade-in">
+                <h3 class="text-xl font-medium mb-6 tracking-widest italic border-l-2 border-black pl-4">System Design</h3>
+                <p class="text-sm leading-loose text-gray-600">
+                    複雑な課題を、シンプルな設計で解決します。私たちは、ユーザー体験を第一に考えたシステムアーキテクチャを構築し、長期的な価値を提供します。
+                </p>
+            </div>
+            <div class="fade-in">
+                <h3 class="text-xl font-medium mb-6 tracking-widest italic border-l-2 border-black pl-4">Digital Consulting</h3>
+                <p class="text-sm leading-loose text-gray-600">
+                    企業のDX化をトータルでサポート。単なる導入に留まらず、組織の文化に合わせた最適なデジタル戦略を提案し、共に成長を目指します。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="py-40 bg-[#fbfbfb] px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-between items-end mb-16 border-b border-gray-200 pb-4">
+                <h2 class="text-2xl font-light tracking-widest uppercase">News</h2>
+                <span class="text-[10px] text-gray-400">お知らせ</span>
+            </div>
+            <div id="news-container" class="divide-y divide-gray-100">
+                </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-40 px-8 max-w-4xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="text-2xl font-light tracking-widest uppercase">Contact</h2>
+            <p class="text-xs text-gray-400 mt-4">プロジェクトのご相談はこちらから</p>
+        </div>
+        <form id="contactForm" class="grid grid-cols-1 gap-12">
+            <div class="relative">
+                <label class="text-[10px] uppercase tracking-widest text-gray-400 absolute -top-6">Name / 氏名</label>
+                <input type="text" required class="w-full border-b border-gray-200 py-2 outline-none focus:border-black transition-colors bg-transparent">
+            </div>
+            <div class="relative">
+                <label class="text-[10px] uppercase tracking-widest text-gray-400 absolute -top-6">Email / メール</label>
+                <input type="email" required class="w-full border-b border-gray-200 py-2 outline-none focus:border-black transition-colors bg-transparent">
+            </div>
+            <div class="relative">
+                <label class="text-[10px] uppercase tracking-widest text-gray-400 absolute -top-6">Message / お問い合わせ内容</label>
+                <textarea rows="4" required class="w-full border-b border-gray-200 py-2 outline-none focus:border-black transition-colors bg-transparent resize-none"></textarea>
+            </div>
+            <div class="flex justify-center mt-10">
+                <button type="submit" id="submitBtn" class="px-20 py-4 border border-black text-[10px] tracking-widest hover:bg-black hover:text-white transition-all">SEND REQUEST</button>
+            </div>
+            <p id="formStatus" class="text-center text-[10px] tracking-widest text-green-600 hidden">送信が完了しました。担当者よりご連絡いたします。</p>
+        </form>
+    </section>
+
+    <footer class="py-10 border-t border-gray-100 text-center">
+        <p class="text-[9px] text-gray-400 tracking-[0.5em] uppercase">© SEIJITSU Co., Ltd. 2024</p>
+    </footer>
+
+    <script>
+        // 1. 模拟动态加载新闻
+        const mockNews = [
+            { date: '2024.12.31', cat: 'INFO', title: '年末年始休業のお知らせ' },
+            { date: '2024.11.15', cat: 'EVENT', title: '次世代テックフォーラム2024への登壇が決定' },
+            { date: '2024.10.01', cat: 'PRESS', title: '資本提携に関するプレスリリースの発行' }
+        ];
+
+        const container = document.getElementById('news-container');
+        mockNews.forEach(item => {
+            container.innerHTML += `
+                <div class="py-8 flex flex-col md:flex-row gap-6 items-start md:items-center group cursor-pointer">
+                    <span class="text-[10px] text-gray-400 font-mono">${item.date}</span>
+                    <span class="text-[9px] px-2 py-0.5 border border-gray-200 text-gray-500">${item.cat}</span>
+                    <h3 class="text-sm tracking-wide group-hover:text-gray-400 transition">${item.title}</h3>
+                </div>
+            `;
+        });
+
+        // 2. 表单处理
+        document.getElementById('contactForm').onsubmit = function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const status = document.getElementById('formStatus');
+            btn.innerHTML = "PROCESSING...";
+            setTimeout(() => {
+                btn.classList.add('hidden');
+                status.classList.remove('hidden');
+            }, 1500);
+        };
+
+        // 3. 滚动动画加载
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
